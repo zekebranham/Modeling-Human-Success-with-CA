@@ -28,30 +28,6 @@ for combo in ALL_COMBINATIONS:
     if combo not in DEFAULT_RULES:
         DEFAULT_RULES[combo] = combo[1]
 
-"""
-Rule Generation Summary:
-
-Each rule in the 3-state Cellular Automaton is based on a 3-cell neighborhood (left, center, right),
-which are interpreted as follows:
-    - Left cell = Environment (e.g., peers, community, geographic region)
-    - Center cell = Family structure or status
-    - Right cell = Personal drive, ambition, or internal motivation
-
-For each possible neighborhood combination (3^3 = 27), a resulting state is assigned
-based on weighted probabilistic behavior determined by a behavioral model:
-
-    - Balanced Model: ~30% Struggling, ~50% Stable, ~20% Thriving
-    - Pessimistic Model: ~45% Struggling, ~45% Stable, ~10% Thriving
-    - Optimistic Model: ~15% Struggling, ~50% Stable, ~35% Thriving
-
-These rules are randomly generated at program start using the `generate_rule_set()` function,
-and produce deterministic behavior across the full rule set, while still maintaining
-the flavor of the social lens (optimistic/pessimistic/balanced).
-
-This approach allows you to model socioeconomic mobility from different ideological worldviews
-and investigate how structural patterns emerge from simple, interpretable local rules.
-"""
-
 class CAApp:
     def __init__(self, master):
         self.master = master
